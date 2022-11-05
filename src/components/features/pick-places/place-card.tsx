@@ -18,7 +18,6 @@ export interface PickPlaceCardProps {
 }
 
 
-
 export const PickPlaceCard = ({day, title, recommends, myPlaces, addPlace, lastDay, toResult}: PickPlaceCardProps) => {
     const [state, setState] = useState<number>(0);
     const [selectedPlace, setSelectedPlace] = useState<Place | null>(null)
