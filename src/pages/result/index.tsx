@@ -1,26 +1,22 @@
-import { GetServerSideProps, NextPage } from "next";
-import Result, { ResultProps } from "../../components/features/Result";
+import { GetServerSideProps, InferGetServerSidePropsType, NextPage } from "next";
+import Result from "../../components/features/Result";
 import Header from "../../components/layout/Header";
 import MobileLayout from "../../components/layout/MobileLayout";
-import {
-  getPersonalityById,
-  personalities,
-  preferences,
-} from "../../constants";
+import { getPersonalityById, personalities, preferences } from "../../components";
 import { PersonalityType } from "../../interfaces/personality.type";
 
-const ResultPage: NextPage = (props: ResultProps) => {
-  return (
-    <div>
-      <Header />
-      <MobileLayout>
-        <Result
-          personality={props.personality}
-          preferences={props.preferences}
-        />
-      </MobileLayout>
-    </div>
-  );
+const ResultPage:NextPage = (props: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+    return (
+        <div>
+            <Header />
+            <MobileLayout>
+                <Result 
+                    personality={props.personality}
+                    preferences={props.preferences}
+                />
+            </MobileLayout>
+        </div>
+    );
 };
 
 export default ResultPage;

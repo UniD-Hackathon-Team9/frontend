@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import Header from "../../components/layout/Header";
 import MobileLayout from "../../components/layout/MobileLayout";
-import { questions } from "../../constants";
+import { questions } from "../../components";
 import { PersonalityWeights } from "../../interfaces/question.type";
 
 export default function Test() {
