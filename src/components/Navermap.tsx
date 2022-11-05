@@ -5,36 +5,26 @@ import { useEffect } from "react";
 
 interface NaverMapProps {
 	mapX: number,
-	mapY: number
+	mapY: number,
+	className: string
 }
-export default function Map({mapX, mapY}:NaverMapProps) {
+export default function Map({mapX, mapY, className}:NaverMapProps) {
 	const initMap = () => {
-		const map = new naver.maps.Map("map", {
-			center: new naver.maps.LatLng(mapX, mapY),
+		const map = new window.naver.maps.Map("map", {
+			center: new window.naver.maps.LatLng(mapX, mapY),
 			zoom: 13,
 		});
-		const mapMarker = new naver.maps.Marker({
-			position: new naver.maps.LatLng(mapX, mapY),
+		const mapMarker = new window.naver.maps.Marker({
+			position: new window.naver.maps.LatLng(mapX, mapY),
 			map: map,
 		});
 	};
+
 	useEffect(() => {
 		initMap();
 	}, [mapX]);
 
 	return (
-		<>
-			<Header />
-			<Head>
-				<script
-					type="text/javascript"
-					src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=oan7725a3j"
-				></script>
-			</Head>
-
-			<MobileLayout>
-				<div id="map" style={{ width: 192, height: 192, marginTop:50, marginLeft: 20 }}></div>
-			</MobileLayout>
-		</>
+		<div id="map" className={className}></div>
 	);
 }
