@@ -1,9 +1,9 @@
 export enum PersonalityType {
-  a = "a",
-  b = "b",
-  c = "c",
-  d = "d",
-  e = "e",
+    a = "a", 
+    b = "b", 
+    c = "c", 
+    d = "d", 
+    e = "e",
 }
 
 export interface Personality {
