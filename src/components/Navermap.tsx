@@ -1,14 +1,11 @@
-import Header from "./layout/Header";
-import MobileLayout from "./layout/MobileLayout";
-import Head from "next/head";
 import { useEffect } from "react";
-import { Place } from "../interfaces/place.type"
+import { PlaceWithState } from "./features/pick-places/types";
 
 interface NaverMapProps {
 	mapX: number,
 	mapY: number,
 	className: string,
-	places: Place[]
+	places: PlaceWithState[]
 }
 export default function Map({mapX, mapY, className, places}:NaverMapProps) {
 
