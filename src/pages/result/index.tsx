@@ -1,5 +1,5 @@
 import { GetServerSideProps, InferGetServerSidePropsType, NextPage } from "next";
-import Result from "../../components/features/Result";
+import Result from "../../components/features/result";
 import Header from "../../components/layout/Header";
 import MobileLayout from "../../components/layout/MobileLayout";
 import { getPersonalityById, personalities, preferences } from "../../components";
