@@ -1,56 +1,46 @@
-import { NextPage } from "next";
-import { useRouter } from "next/router";
-import { useEffect, useMemo } from "react";
+import {  GetServerSideProps, NextPage } from "next";
+import Result, { ResultProps } from "../../components/features/Result";
 import Header from "../../components/layout/Header";
 import MobileLayout from "../../components/layout/MobileLayout";
 import { getPersonalityById, personalities, preferences } from "../../constants";
-import { Personality, PersonalityType } from "../../interfaces/personality.type";
+import { PersonalityType } from "../../interfaces/personality.type";
 
-interface ResultQuery {
-    preference: number // preferenceId
-    personality: PersonalityType
-}
-const _preferences = preferences.map(p => p.id);
-const _personalities = personalities.map(p => p.type);
-
-const Result:NextPage = (props) => {
-    const router = useRouter()
-    const preferenceId = Number(router.query.preference);
-    const personalityId = router.query.personality as unknown as PersonalityType;
-
-    console.log(preferenceId)
-    console.log(personalityId)
-
-    useEffect(() => {
-        // if(!_preferences.includes(preferenceId) 
-        //     || !_personalities.includes(personalityId)
-        // ){
-        //     router.push('/');
-        // }
-
-    },[])
-    const personality:Personality = useMemo(
-        () => getPersonalityById(personalityId), 
-        [personalityId]
-    )
-
+const ResultPage:NextPage = (props: ResultProps) => {
     return (
         <div>
             <Header />
             <MobileLayout>
-                <div className="w-full p-6 flex flex-col">
-                    <h1 className="text-3xl font-bold">
-                        당신은 
-                        <span style={{color: personality.color}}>
-                            {personality.name}
-                        </span>
-                    </h1>
-                    
-                </div>
-
-                </MobileLayout>
+                <Result 
+                    personality={props.personality}
+                    preferences={props.preferences}
+                />
+            </MobileLayout>
         </div>
-    )
-}
+    );
+};
 
-export default Result;
+export default ResultPage;
+
+
+export const getServerSideProps:GetServerSideProps = async ({ query }) => {
+    const _preferences = preferences.map(p => p.id);
+    const _personalities = personalities.map(p => p.type);
+
+    const userPreferenceIds = ((query.preferences || "") as string).split(',').map(Number);
+    if(userPreferenceIds.some(pre => !_preferences.includes(pre))){
+        return {props: {personality: null, preferences: []}}
+    }
+    const userPersonalityId = query.personality as unknown as PersonalityType
+    if(!_personalities.includes(userPersonalityId)){
+        return {props: {personality: null, preferences: []}}
+    }
+
+    const userPreferences = userPreferenceIds.map(pId => preferences.find(pref => pref.id === pId)!);
+    const userPersonality = getPersonalityById(userPersonalityId)!
+    return {
+        props: {
+            preferences: userPreferences,
+            personality: userPersonality,
+        }
+    }
+  }
