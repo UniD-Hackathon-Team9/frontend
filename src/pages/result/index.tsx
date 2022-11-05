@@ -1,11 +1,11 @@
-import {  GetServerSideProps, NextPage } from "next";
-import Result, { ResultProps } from "../../components/features/Result";
+import { GetServerSideProps, InferGetServerSidePropsType, NextPage } from "next";
+import Result from "../../components/features/Result";
 import Header from "../../components/layout/Header";
 import MobileLayout from "../../components/layout/MobileLayout";
-import { getPersonalityById, personalities, preferences } from "../../constants";
+import { getPersonalityById, personalities, preferences } from "../../components";
 import { PersonalityType } from "../../interfaces/personality.type";
 
-const ResultPage:NextPage = (props: ResultProps) => {
+const ResultPage:NextPage = (props: InferGetServerSidePropsType<typeof getServerSideProps>) => {
     return (
         <div>
             <Header />
