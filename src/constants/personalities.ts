@@ -25,7 +25,7 @@ export const personalities:Personality[] = [
     {
         name: "흑돼지",
         color: "#F9A195",
-        type: PersonalityType.a,
+        type: PersonalityType.d,
         keyword: ["맛집","음식"],
         description: "당신은 흑돼지 유형!\ㅜFood is my life. Life is food. 여행에서 남는 건 음식 뿐"
     },
@@ -39,9 +39,6 @@ export const personalities:Personality[] = [
 ];
 
 export const getPersonalityById = (type: PersonalityType) => {
-    const found = personalities.find(p => p.type);
-    if(!found){
-        throw Error("Personality Not found")
-    }
+    const found = personalities.find(p => p.type === type);
     return found;
 }
