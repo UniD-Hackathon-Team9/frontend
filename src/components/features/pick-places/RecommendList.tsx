@@ -13,12 +13,12 @@ interface RecommendListProps {
 export const RecommendList = ({selectedRecommendId, recommends, type, onClickRecommend}:RecommendListProps) => {
     const list = type === "Food" ? recommends.food : [...recommends.cafe, ...recommends.spots]
     return (
-        <div className="border-b my-6 max-h-80 overflow-scroll">
+        <div className="border-b my-6 overflow-scroll max-h-full flex-col">
             {list.map((rec) => (
                 <div key={rec.id} className="p-2 border-t flex flex-row justify-between items-center">
                     <div onClick={() => onClickRecommend(rec)}>
-                        <p>{rec.name}</p>
-                        <p>{rec.description}</p>
+                        <p className="text-md font-semibold">{rec.name}</p>
+                        <p className="text-sm text-gray-500">{rec.description}</p>
                     </div>
                     {selectedRecommendId === rec.id && (
                         <FiCheck color="#03C04A" size={32} />

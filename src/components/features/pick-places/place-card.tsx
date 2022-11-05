@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useSwiper } from "swiper/react"
 import { Place } from "../../../interfaces/place.type"
 import { RecommendPlacesDto } from "../../../interfaces/places.recommends.dto"
+import Map from "../../Navermap"
 import { RecommendList } from "./RecommendList"
 import { PlaceWithState, STATES, typeNameOf } from "./types"
 
@@ -48,17 +49,17 @@ export const PickPlaceCard = ({day, title, recommends, myPlaces, addPlace, lastD
             <p className="text-3xl font-800 mb-4">
                 {title} {STATES[state].name}
             </p>
-            <div style={{aspectRatio: "5/2"}} className="flex flex-row">
+            <div style={{aspectRatio: "5/2"}} className="flex flex-row flex-1">
                 {selectedPlace ? (
                     <>
-                        <div className="w-48 h-48 rounded bg-green-50">
-                            지도
+                        <div className="w-32 h-32 rounded bg-green-50">
+                            <Map mapX={selectedPlace.longitude} mapY={selectedPlace.latitude} className="w-full h-full" />
                         </div>
                         <div className="flex flex-col justify-center ml-4">
-                            <p className="text-xl font-semibold">
+                            <p className="text-lg font-semibold">
                                 {selectedPlace?.name}
                             </p>
-                            <p className="text-lg">
+                            <p className="text-sm text-gray-500">
                                 {selectedPlace?.description}
                             </p>
                         </div>
@@ -71,17 +72,22 @@ export const PickPlaceCard = ({day, title, recommends, myPlaces, addPlace, lastD
                     </div>
                 )}
             </div>
-            <RecommendList 
-                selectedRecommendId={selectedPlace ? selectedPlace.id : null}
-                recommends={recommends}
-                type={STATES[state].type}
-                onClickRecommend={setSelectedPlace} 
-            />
-            <div className="flex flex-row justify-around items-center h-full">
-                <button disabled={state === 0} className="btn-primary-outline w-48" onClick={toPrev}>
+            <div className="max-h-full overflow-scroll h-96">
+                <RecommendList 
+                    selectedRecommendId={selectedPlace ? selectedPlace.id : null}
+                    recommends={recommends}
+                    type={STATES[state].type}
+                    onClickRecommend={setSelectedPlace} 
+                />
+            </div>
+            <div className="flex flex-1 flex-row justify-around items-center fixed bottom-0 left-0 right-0 px-6 py-8" style={{
+                flex: "0 0 auto"
+            }}>
+                <button disabled={state === 0} className="btn-primary-outline flex-1" onClick={toPrev}>
                     이전
                 </button>
-                <button className={`btn-${selectedPlace ? "primary" : "primary-outline"} w-48`} onClick={toNext}>
+                <span className="w-8" />
+                <button className={`btn-${selectedPlace ? "primary" : "primary-outline"} flex-1`} onClick={toNext}>
                     {selectedPlace ? "다음" : "패스할래요"}
                 </button>
             </div>
