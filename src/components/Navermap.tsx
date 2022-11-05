@@ -14,10 +14,20 @@ export default function Map({mapX, mapY, className}:NaverMapProps) {
 			center: new window.naver.maps.LatLng(mapX, mapY),
 			zoom: 13,
 		});
-		const mapMarker = new window.naver.maps.Marker({
-			position: new window.naver.maps.LatLng(mapX, mapY),
-			map: map,
+	
+		const marker = new window.naver.maps.Marker({
+					position: window.naver.maps.TransCoord.fromTM128ToLatLng(new window.naver.maps.Point(238372, 92177)),
+					map: map,
+					animation: 2,
 		});
+		// travelapp_place.map((place, index)=> {
+		// 	new window.naver.maps.Marker({
+		// 		position: new naver.maps.Point(place.latitude, place.longitude),
+		// 		map: map,
+		// 		animation: 1,
+		// 		icon: (index+1).toString()
+		// 	});
+		// })
 	};
 
 	useEffect(() => {
