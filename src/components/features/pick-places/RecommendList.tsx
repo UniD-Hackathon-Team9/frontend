@@ -18,7 +18,7 @@ export const RecommendList = ({selectedRecommendId, recommends, type, onClickRec
                 <div key={rec.id} className="p-2 border-t flex flex-row justify-between items-center">
                     <div onClick={() => onClickRecommend(rec)}>
                         <p className="text-md font-semibold">{rec.name}</p>
-                        <p className="text-sm text-gray-500">{rec.description}</p>
+                        <p className="text-sm text-gray-500">{rec.address}</p>
                     </div>
                     {selectedRecommendId === rec.id && (
                         <FiCheck color="#03C04A" size={32} />

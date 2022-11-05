@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import Header from "../../components/layout/Header";
 import MobileLayout from "../../components/layout/MobileLayout";
-import { questions } from "../../components";
+import { questions } from "../../constants";
 import { PersonalityWeights } from "../../interfaces/question.type";
 
 export default function Test() {
@@ -25,7 +25,7 @@ export default function Test() {
             personality.lastIndexOf(Math.max(...personality)) +
               "a".charCodeAt(0)
           ),
-          preferences: preferences.join(","),
+          preferences: Array.from(new Set(preferences)).join(","),
         },
       });
     }
@@ -40,9 +40,7 @@ export default function Test() {
     );
     setPreferences((preferences) => {
       const { preference } = questions[questionNumber].first;
-      if (preference && !preferences.includes(preference.id))
-        preferences.push(preference.id);
-      return preferences;
+      return [...preferences, ...preference.map(p => p.id)];
     });
     nextQuetion();
   }
@@ -56,9 +54,7 @@ export default function Test() {
     );
     setPreferences((preferences) => {
       const { preference } = questions[questionNumber].second;
-      if (preference && !preferences.includes(preference.id))
-        preferences.push(preference.id);
-      return preferences;
+      return [...preferences, ...preference.map(p => p.id)];
     });
     nextQuetion();
   }
@@ -72,13 +68,10 @@ export default function Test() {
     );
     setPreferences((preferences) => {
       const { preference } = questions[questionNumber].none;
-      if (preference && !preferences.includes(preference.id))
-        preferences.push(preference.id);
-      return preferences;
+      return [...preferences, ...preference.map(p => p.id)];
     });
     nextQuetion();
   }
-  console.log(personality);
   return (
     <>
       <Header />

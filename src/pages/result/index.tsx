@@ -2,7 +2,7 @@ import { GetServerSideProps, InferGetServerSidePropsType, NextPage } from "next"
 import Result from "../../components/features/result";
 import Header from "../../components/layout/Header";
 import MobileLayout from "../../components/layout/MobileLayout";
-import { getPersonalityById, personalities, preferences } from "../../components";
+import { getPersonalityById, personalities, preferences } from "../../constants";
 import { PersonalityType } from "../../interfaces/personality.type";
 
 const ResultPage:NextPage = (props: InferGetServerSidePropsType<typeof getServerSideProps>) => {

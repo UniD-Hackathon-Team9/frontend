@@ -14,5 +14,5 @@ interface Choice {
   title: string;
   image: string;
   personality: PersonalityWeights;
-  preference: Preference | null;
+  preference: Preference[];
 }
