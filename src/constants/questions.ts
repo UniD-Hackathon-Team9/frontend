@@ -82,29 +82,6 @@ export const questions: Question[] = [
 	// 4
 	{
 		index: 4,
-		title: "예전에 여행한 곳을 다시 간다면 ..",
-		first: {
-			title: "익숙한 장소가 좋아",
-			image: "",
-			personality: [2, 0, 1, 0, 0],
-			preference: null,
-		},
-		second: {
-			title: "새로운 장소에 도전!",
-			image: "",
-			personality: [0, 3, 0, 2, 0],
-			preference: null,
-		},
-		none: {
-			title: "상관 없음",
-			image: "",
-			personality: [0, 0, 0, 0, 2],
-			preference: null,
-		},
-	},
-	// 5
-	{
-		index: 5,
 		title: "새벽이 되면 ..",
 		first: {
 			title: "센치해지는 내 마음.. 평소 고민과 못다한 이야기를 털어놓는다",
@@ -125,9 +102,9 @@ export const questions: Question[] = [
 			preference: null,
 		},
 	},
-	// 6
+	// 5
 	{
-		index: 6,
+		index: 5,
 		title: "여행 다닐 때 나는 ..",
 		first: {
 			title: "여유롭게 둘러보며 유연하게 일정 맞추기",
@@ -148,9 +125,9 @@ export const questions: Question[] = [
 			preference: null,
 		},
 	},
-	// 7
+	// 6
 	{
-		index: 7,
+		index: 6,
 		title: "여행 중에 지출 발생! 이때 나는 ..",
 		first: {
 			title: "바로 계산해서 기록",
@@ -171,9 +148,9 @@ export const questions: Question[] = [
 			preference: null,
 		},
 	},
-	// 8
+	// 7
 	{
-		index: 8,
+		index: 7,
 		title: "다음 갈 장소는 어디지?",
 		first: {
 			title: "계획대로 ㄱㄱ",
@@ -194,9 +171,9 @@ export const questions: Question[] = [
 			preference: null,
 		},
 	},
-	// 9
+	// 8
 	{
-		index: 9,
+		index: 8,
 		title: "여행 중 틈틈이 나는 ..",
 		first: {
 			title: "스마트폰은 내 사랑. 인스타 스토리 업로드는 덤!",
@@ -217,9 +194,9 @@ export const questions: Question[] = [
 			preference: null,
 		},
 	},
-	// 10
+	// 9
 	{
-		index: 10,
+		index: 9,
 		title: "여행에서 돌아온 나는 …",
 		first: {
 			title: "짐 정리와 사진 정리는 나중에 .. 우선 침대로",
@@ -240,9 +217,9 @@ export const questions: Question[] = [
 			preference: null,
 		},
 	},
-	// 11
+	// 10
 	{
-		index: 11,
+		index: 10,
 		title: "숙소와 음식점의 창문으로는 ..",
 		first: {
 			title: "탁 트인 바다가 보인다",
@@ -263,9 +240,9 @@ export const questions: Question[] = [
 			preference: null,
 		},
 	},
-	// 12
+	// 11
 	{
-		index: 12,
+		index: 11,
 		title: "갈 수 있는 카페가 여러개? 그렇다면 ..",
 		first: {
 			title: "다 필요 없어! 인스타 업로드용 예쁘고 감성 카페로",
@@ -286,9 +263,9 @@ export const questions: Question[] = [
 			preference: null,
 		},
 	},
-	// 13
+	// 12
 	{
-		index: 13,
+		index: 12,
 		title: "여행까지 왔는데 ..",
 		first: {
 			title: "술이 빠질 수 없지",
@@ -309,9 +286,9 @@ export const questions: Question[] = [
 			preference: null,
 		},
 	},
-	// 14
+	// 13
 	{
-		index: 14,
+		index: 13,
 		title: "선호하는 음식은?",
 		first: {
 			title: "해산물",
