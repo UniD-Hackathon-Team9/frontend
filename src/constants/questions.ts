@@ -7,7 +7,7 @@ export const questions:Question[] = [
         title: "",
         first: {
             title: "",
-            image: "",
+            image: "/img/test/2_a.png",
             personality: [0, 0, 0, 0, 0],
             preference: Preferences[0]  //view, garden
         },
