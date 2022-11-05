@@ -1,5 +1,5 @@
 import { Question } from "../interfaces/question.type";
-import { Preferences } from "./preferences";
+import { preferences } from "./preferences";
 
 /* personality */
 // a. 돌하르방
@@ -64,13 +64,13 @@ export const questions: Question[] = [
 			title: "관광보다는 조용한 휴식을 즐기며",
 			image: "",
 			personality: [3, 0, 2, 1, 0],
-			preference: Preferences[7],
+			preference: preferences[7],
 		},
 		second: {
 			title: "명소 관광은 물론, 할 수 있는 액티비티는 다 해야지",
 			image: "",
 			personality: [0, 3, 0, 2, 0],
-			preference: Preferences[6],
+			preference: preferences[6],
 		},
 		none: {
 			title: "상관 없음",
@@ -87,13 +87,13 @@ export const questions: Question[] = [
 			title: "센치해지는 내 마음.. 평소 고민과 못다한 이야기를 털어놓는다",
 			image: "",
 			personality: [2, 0, 3, 0, 0],
-			preference: Preferences[7],
+			preference: preferences[7],
 		},
 		second: {
 			title: "왁자지껄, 시끌벅적. 텐션 UP!",
 			image: "",
 			personality: [0, 3, 0, 0, 0],
-			preference: Preferences[6],
+			preference: preferences[6],
 		},
 		none: {
 			title: "상관 없음",
@@ -110,13 +110,13 @@ export const questions: Question[] = [
 			title: "여유롭게 둘러보며 유연하게 일정 맞추기",
 			image: "",
 			personality: [3, 0, 2, 0, 0],
-			preference: Preferences[7],
+			preference: preferences[7],
 		},
 		second: {
 			title: "여행 온 김에 많은 것을 둘러보고 체험하기",
 			image: "",
 			personality: [0, 0, 3, 2, 0],
-			preference: Preferences[6],
+			preference: preferences[6],
 		},
 		none: {
 			title: "상관 없음",
@@ -202,13 +202,13 @@ export const questions: Question[] = [
 			title: "짐 정리와 사진 정리는 나중에 .. 우선 침대로",
 			image: "",
 			personality: [2, 0, 0, 0, 0],
-			preference: Preferences[7],
+			preference: preferences[7],
 		},
 		second: {
 			title: "할 일을 다 하고 편하게 쉬자! 인스타 업로드는 바로!",
 			image: "",
 			personality: [0, 2, 0, 0, 0],
-			preference: Preferences[6],
+			preference: preferences[6],
 		},
 		none: {
 			title: "상관 없음",
@@ -225,13 +225,13 @@ export const questions: Question[] = [
 			title: "탁 트인 바다가 보인다",
 			image: "",
 			personality: [0, 0, 0, 0, 0],
-			preference: Preferences[1],
+			preference: preferences[1],
 		},
 		second: {
 			title: "초록초록 파릇파릇",
 			image: "",
 			personality: [0, 0, 0, 0, 0],
-			preference: Preferences[0],
+			preference: preferences[0],
 		},
 		none: {
 			title: "상관 없음",
@@ -248,13 +248,13 @@ export const questions: Question[] = [
 			title: "다 필요 없어! 인스타 업로드용 예쁘고 감성 카페로",
 			image: "",
 			personality: [0, 0, 0, 0, 0],
-			preference: Preferences[2],
+			preference: preferences[2],
 		},
 		second: {
 			title: "맛, 가격, 위치, 종류 모두 따져야지",
 			image: "",
 			personality: [0, 0, 0, 0, 0],
-			preference: Preferences[3],
+			preference: preferences[3],
 		},
 		none: {
 			title: "상관 없음",
@@ -271,13 +271,13 @@ export const questions: Question[] = [
 			title: "술이 빠질 수 없지",
 			image: "",
 			personality: [0, 0, 0, 0, 0],
-			preference: Preferences[4],
+			preference: preferences[4],
 		},
 		second: {
 			title: "굳이 술을..?",
 			image: "",
 			personality: [0, 0, 0, 0, 0],
-			preference: Preferences[5],
+			preference: preferences[5],
 		},
 		none: {
 			title: "상관 없음",
@@ -294,13 +294,13 @@ export const questions: Question[] = [
 			title: "해산물",
 			image: "",
 			personality: [0, 0, 0, 0, 0],
-			preference: Preferences[8],
+			preference: preferences[8],
 		},
 		second: {
 			title: "육류",
 			image: "",
 			personality: [0, 0, 0, 0, 0],
-			preference: Preferences[9],
+			preference: preferences[9],
 		},
 		none: {
 			title: "상관 없음",
