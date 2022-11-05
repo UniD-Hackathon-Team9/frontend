@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import Header from "../../components/layout/Header";
 import MobileLayout from "../../components/layout/MobileLayout";
-import { questions } from "../../constants";
+import { questions } from "../../components";
 import { PersonalityWeights } from "../../interfaces/question.type";
 
 export default function Test() {
@@ -11,6 +11,7 @@ export default function Test() {
   const [personality, setPersonality] = useState<PersonalityWeights>([
     0, 0, 0, 0, 0,
   ]);
+  const [preferences, setPreferences] = useState<number[]>([]);
   const router = useRouter();
   const questionCount = questions.length;
   function nextQuetion() {
@@ -23,6 +24,7 @@ export default function Test() {
           personality: String.fromCharCode(
             personality.indexOf(Math.max(...personality)) + "a".charCodeAt(0)
           ),
+          preferences: preferences.join(","),
         },
       });
     }
@@ -35,6 +37,12 @@ export default function Test() {
             weight + questions[questionNumber].first.personality[index]
         ) as PersonalityWeights
     );
+    setPreferences((preferences) => {
+      const { preference } = questions[questionNumber].first;
+      if (preference && !preferences.includes(preference.id))
+        preferences.push(preference.id);
+      return preferences;
+    });
     nextQuetion();
   }
   function chooseSecond() {
@@ -45,6 +53,12 @@ export default function Test() {
             weight + questions[questionNumber].second.personality[index]
         ) as PersonalityWeights
     );
+    setPreferences((preferences) => {
+      const { preference } = questions[questionNumber].second;
+      if (preference && !preferences.includes(preference.id))
+        preferences.push(preference.id);
+      return preferences;
+    });
     nextQuetion();
   }
   function chooseNone() {
@@ -55,6 +69,12 @@ export default function Test() {
             weight + questions[questionNumber].none.personality[index]
         ) as PersonalityWeights
     );
+    setPreferences((preferences) => {
+      const { preference } = questions[questionNumber].none;
+      if (preference && !preferences.includes(preference.id))
+        preferences.push(preference.id);
+      return preferences;
+    });
     nextQuetion();
   }
   console.log(personality);
