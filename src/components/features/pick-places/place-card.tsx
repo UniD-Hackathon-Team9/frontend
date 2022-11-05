@@ -48,18 +48,18 @@ export const PickPlaceCard = ({day, title, recommends, myPlaces, addPlace, lastD
             <p className="text-3xl font-800 mb-4">
                 {title} {STATES[state].name}
             </p>
-            <div style={{aspectRatio: "5/2"}} className="flex flex-row flex-1">
+            <div style={{aspectRatio: "5/2"}} className="flex flex-row flex-1 w-full">
                 {selectedPlace ? (
                     <>
                         <div className="w-32 h-32 rounded bg-green-50">
-                            <Map mapX={selectedPlace.longitude} mapY={selectedPlace.latitude} className="w-full h-full" />
+                            <Map places={[]} mapX={selectedPlace.longitude} mapY={selectedPlace.latitude} className="w-full h-full" />
                         </div>
                         <div className="flex flex-col justify-center ml-4">
                             <p className="text-lg font-semibold">
-                                {selectedPlace?.name}
+                                {selectedPlace.name}
                             </p>
                             <p className="text-sm text-gray-500">
-                                {selectedPlace?.description}
+                                {selectedPlace.address}
                             </p>
                         </div>
                     </>
