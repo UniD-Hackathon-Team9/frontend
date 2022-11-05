@@ -16,13 +16,13 @@ export const questions: Question[] = [
 		title: "여행 가기 전 나는 ..",
 		first: {
 			title: "계획? 일단 가는거지",
-			image: "",
+			image: "/img/test/1_a.png",
 			personality: [2, 0, 2, 0, 0],
 			preference: null,
 		},
 		second: {
 			title: "세부적인 계획은 필수!",
-			image: "",
+			image: "/img/test/_.png",
 			personality: [2, 0, 2, 0, 0],
 			preference: null, // 선호 유형 관계 없는 경우
 		},
@@ -39,7 +39,7 @@ export const questions: Question[] = [
 		title: "식당과 숙소를 예약할 때 나는 ..",
 		first: {
 			title: "돈 조금 더 쓰더라도 좋은 곳과 맛있는 음식",
-			image: "",
+			image: "/img/test/2_a.png",
 			personality: [2, 0, 2, 3, 0],
 			preference: null,
 		},
