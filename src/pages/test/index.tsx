@@ -22,7 +22,8 @@ export default function Test() {
         pathname: "/result",
         query: {
           personality: String.fromCharCode(
-            personality.indexOf(Math.max(...personality)) + "a".charCodeAt(0)
+            personality.lastIndexOf(Math.max(...personality)) +
+              "a".charCodeAt(0)
           ),
           preferences: preferences.join(","),
         },
@@ -82,8 +83,8 @@ export default function Test() {
     <>
       <Header />
       <MobileLayout>
-        <div className="flex w-full -center content-center flex-col mt-5 p-0">
-          <div className="flex flex-col justify-center h-14 w-10/12 self-center m-0">
+        <div className="relative flex w-full -center content-center flex-col mt-5 p-0">
+          <div className="flex flex-col justify-center h-14 w-10/12 self-center m-0 relative">
             <span className="font-bold text-2xl self-center">
               여행 유형 테스트
             </span>
@@ -99,8 +100,15 @@ export default function Test() {
               }}
             ></div>
           </div>
-          <div className="self-center content-center w-8/12 my-12">
-            <p className="text-center text-lg">
+          <div className="self-center content-center w-8/12 my-10">
+            <p className="relative text-center text-xl w-fit self-center m-auto">
+              <Image
+                src="/img/star.png"
+                alt="star"
+                width={80}
+                height={80}
+                className="absolute -top-6 -right-20"
+              />
               {questions[questionNumber].title}
             </p>
           </div>
@@ -119,7 +127,7 @@ export default function Test() {
                 />
               </div>
               <button
-                className="h-20 bg-orange-300 hover:bg-orange-400 text-white font-bold py-2 px-4 rounded w-9/12 self-center mb-4"
+                className="h-24 btn-primary-outline border-2 font-bold py-2 px-4 rounded w-11/12 self-center mb-4 text-base"
                 onClick={chooseFirst}
               >
                 {questions[questionNumber].first.title}
@@ -139,7 +147,7 @@ export default function Test() {
                 />
               </div>
               <button
-                className="h-20 bg-green-400 hover:bg-green-500 text-white font-bold py-2 px-4 rounded w-9/12 self-center mb-4"
+                className="h-24 btn-secondary-outline border-2 font-bold py-2 px-4 rounded w-11/12 self-center mb-4 text-base"
                 onClick={chooseSecond}
               >
                 {questions[questionNumber].second.title}
@@ -147,7 +155,7 @@ export default function Test() {
             </div>
           </div>
           <button
-            className="h-16 bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded w-8/12 self-center mb-4"
+            className="h-16 underline font-bold self-center mb-4 text-gray-600"
             onClick={chooseNone}
           >
             {questions[questionNumber].none.title}
