@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Header from '../components/layout/Header'
 
 export default function Home() {
   return (
     <div>
-      {"Promise<Nine>"}
+      <Header />
     </div>
   )
 }
