@@ -16,8 +16,8 @@ const ResultPage:NextPage = (props: ResultProps) => {
                 />
             </MobileLayout>
         </div>
-    )
-}
+    );
+};
 
 export default ResultPage;
 
