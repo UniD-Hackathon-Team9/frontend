@@ -1,6 +1,6 @@
 import { Personality, PersonalityType } from "../interfaces/personality.type";
 
-const Personalities:Personality[] = [
+export const personalities:Personality[] = [
     {
         name: "돌하르방",
         type: PersonalityType.a,
@@ -38,4 +38,10 @@ const Personalities:Personality[] = [
     },
 ];
 
-export default Personalities
+export const getPersonalityById = (type: PersonalityType) => {
+    const found = personalities.find(p => p.type);
+    if(!found){
+        throw Error("Personality Not found")
+    }
+    return found;
+}
