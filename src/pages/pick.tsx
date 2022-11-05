@@ -78,7 +78,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     );
     const userPersonality = getPersonalityById(userPersonalityId)!;
 
-    const {data} = await axios.post<RecommendPlacesDto>('http://localhost:5000/recommend', {
+    const {data} = await axios.post<RecommendPlacesDto>('http://52.79.169.200:5000/recommend', {
         preferences: userPreferences.map(p => p.id),
         personality: userPersonality.type
     })
