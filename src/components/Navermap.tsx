@@ -3,21 +3,24 @@ import MobileLayout from "./layout/MobileLayout";
 import Head from "next/head";
 import { useEffect } from "react";
 
-export default function Map() {
+interface NaverMapProps {
+	mapX: number,
+	mapY: number
+}
+export default function Map({mapX, mapY}:NaverMapProps) {
 	const initMap = () => {
 		const map = new naver.maps.Map("map", {
-			center: new naver.maps.LatLng(33.506, 126.4917),
-			zoom: 15,
-			zoomControl: true,
+			center: new naver.maps.LatLng(mapX, mapY),
+			zoom: 13,
 		});
 		const mapMarker = new naver.maps.Marker({
-			position: new naver.maps.LatLng(33.506, 126.4917),
+			position: new naver.maps.LatLng(mapX, mapY),
 			map: map,
 		});
 	};
 	useEffect(() => {
 		initMap();
-	}, []);
+	}, [mapX]);
 
 	return (
 		<>
@@ -30,7 +33,7 @@ export default function Map() {
 			</Head>
 
 			<MobileLayout>
-				<div id="map" style={{ width: "80%", height: "50%" }}></div>
+				<div id="map" style={{ width: 192, height: 192, marginTop:50, marginLeft: 20 }}></div>
 			</MobileLayout>
 		</>
 	);
