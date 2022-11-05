@@ -17,13 +17,13 @@ export const questions: Question[] = [
     first: {
       title: "계획? 일단 가는거지",
       image: "/img/test/1_a.png",
-      personality: [2, 0, 2, 0, 0],
+      personality: [0, 0, 2, 0, 0],
       preference: null,
     },
     second: {
       title: "세부적인 계획은 필수!",
       image: "/img/test/1_b.png",
-      personality: [2, 0, 2, 0, 0],
+      personality: [0, 0, 2, 0, 0],
       preference: null, // 선호 유형 관계 없는 경우
     },
     none: {
@@ -63,7 +63,7 @@ export const questions: Question[] = [
     first: {
       title: "관광보다는 조용한 휴식을 즐기며",
       image: "/img/test/3_a.png",
-      personality: [3, 0, 2, 1, 0],
+      personality: [2, 0, 2, 1, 0],
       preference: preferences[7],
     },
     second: {
@@ -84,7 +84,7 @@ export const questions: Question[] = [
     index: 4,
     title: "새벽이 되면 ..",
     first: {
-      title: "센치해지는 내 마음.. 평소 고민과 못다한 이야기를 털어놓는다",
+      title: "평소 고민과 못다한 이야기를 털어놓는다",
       image: "/img/test/4_a.png",
       personality: [2, 0, 3, 0, 0],
       preference: preferences[7],
@@ -109,7 +109,7 @@ export const questions: Question[] = [
     first: {
       title: "여유롭게 둘러보며 유연하게 일정 맞추기",
       image: "/img/test/5_a.png",
-      personality: [3, 0, 2, 0, 0],
+      personality: [2, 0, 2, 0, 0],
       preference: preferences[7],
     },
     second: {
@@ -182,7 +182,7 @@ export const questions: Question[] = [
       preference: null,
     },
     second: {
-      title: "행까지 왔는데 휴대폰은 무슨! 자연을 느끼자",
+      title: "여행까지 왔는데 휴대폰은 무슨! 자연을 느끼자",
       image: "/img/test/8_b.png",
       personality: [2, 0, 0, 1, 0],
       preference: null,

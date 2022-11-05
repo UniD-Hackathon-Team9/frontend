@@ -1,6 +1,7 @@
 import { Personality } from "../../../interfaces/personality.type";
 import { Preference } from "../../../interfaces/preference.type";
 import Image from "next/image";
+import Link from "next/link";
 
 export interface ResultProps {
   personality: Personality;
@@ -15,8 +16,8 @@ export default function Result({ personality, preferences }: ResultProps) {
         <span style={{ color: personality.color }}>{personality.name}</span>
         입니다.
       </h1>
-      <hr className="self-center w-11/12 mt-6 mb-8 h-0.5 bg-gray-300 border-0 " />
-      <div className="self-center h-80 w-11/12 relative mb-6 cursor-pointer">
+      <hr className="self-center w-11/12 mt-6 mb-4 h-0.5 bg-gray-300 border-0 " />
+      <div className="self-center h-80 w-11/12 relative mb-3 cursor-pointer">
         <Image
           src={`/img/result/${personality.type}.png`}
           alt="result"
@@ -26,9 +27,15 @@ export default function Result({ personality, preferences }: ResultProps) {
         />
       </div>
       <p className="w-11/12 self-center text-lg">{personality.description}</p>
-      <button className="text-xl h-16 mt-6 bg-green-400 hover:bg-green-500 text-white font-bold py-2 px-4 rounded w-9/12 self-center mb-4">
-        나에게 딱 맞는 추천 코스 보러가기!
-      </button>
+      <Link
+        href={`/pick?personality=${personality.type}&preferences=${preferences
+          .map((preference) => preference.id)
+          .join(",")}`}
+        className="text-center flex justify-center items-center text-xl h-20 mt-6 btn-secondary text-white font-bold py-2 px-4 rounded w-9/12 self-center mb-4"
+      >
+        나에게 딱 맞는
+        <br /> 추천 코스 보러가기!
+      </Link>
     </div>
   );
 }
