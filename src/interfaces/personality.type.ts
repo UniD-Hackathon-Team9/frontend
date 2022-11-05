@@ -8,4 +8,5 @@ export interface Personality {
     type: PersonalityType
     keyword: string[];
     description: string;
+    color: string
 }
