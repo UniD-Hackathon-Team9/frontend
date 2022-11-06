@@ -18,6 +18,7 @@ const Summary = ({myPlaces}:SummaryProps) => {
                             index={index} 
                             name={item.name} 
                             tags={item.tags} 
+                            key={day*5+index}
                         />
                     )
                 ))
