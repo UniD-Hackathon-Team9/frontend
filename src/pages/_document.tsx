@@ -14,7 +14,7 @@ function Document() {
 					type="text/javascript"
 					src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=oan7725a3j"
 				></script>
-        <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=YOUR_CLIENT_ID&submodules=geocoder"></script>
+        <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=oan7725a3j&submodules=geocoder"></script>
       </Head>
       <body className="body">
         <Main />
