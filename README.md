@@ -1,18 +1,13 @@
-## Button Usage  
-```html
-<button className="btn-primary">
-    이건 감귤색
-</button>
+# Promise<9> MZEJU
+MZ세대를 위한 제주도 여행지 추천 서비스
 
-<button className="btn-primary-outline">
-    이건 감귤색
-</button>
+## Stack
+- React.js
+- Next.js
+- tailwindcss
+- Naver Map API
+- Typescript
 
-<button className="btn-secondary">
-    이건 녹차색
-</button>
 
-<button className="btn-secondary-outline">
-    이건 녹차색
-</button>
-```
+## Details
+https://github.com/UniD-Hackathon-Team9
