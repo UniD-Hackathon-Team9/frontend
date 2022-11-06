@@ -91,7 +91,7 @@ export default function Test() {
               여행 유형 테스트
             </span>
             <span className="self-end">
-              {questionNumber + 1}/{questionCount}
+              {questionNumber + 1} / {questionCount}
             </span>
           </div>
           <div className="self-center w-10/12 bg-gray-200 rounded-full h-2">
@@ -100,7 +100,7 @@ export default function Test() {
               style={{
                 width: `${((questionNumber + 1) / questionCount) * 100}%`,
               }}
-            ></div>
+            />
           </div>
           <div className="self-center content-center w-8/12 my-10">
             <p className="relative text-center text-xl w-fit self-center m-auto">
