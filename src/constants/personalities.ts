@@ -31,7 +31,7 @@ export const personalities: Personality[] = [
     type: PersonalityType.d,
     keyword: ["맛집", "음식"],
     description:
-      "당신은 흑돼지 유형! Food is my life. Life is food. 여행에서 남는 건 음식 뿐",
+      "당신은 흑돼지 유형!\nFood is my life. Life is food. 여행에서 남는 건 음식 뿐",
   },
   {
     name: "유채꽃",

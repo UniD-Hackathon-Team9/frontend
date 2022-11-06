@@ -21,7 +21,7 @@ export const questions: Question[] = [
       preference: [],
     },
     second: {
-      title: "세부적인 계획은 필수!",
+      title: `세부적인 계획은 필수!`,
       image: "/img/test/1_b.png",
       personality: [0, 0, 2, 0, 0],
       preference: [], // 선호 유형 관계 없는 경우

@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Header from "../../components/layout/Header";
 import MobileLayout from "../../components/layout/MobileLayout";
+import Loading from "../../components/loading";
 import { questions } from "../../constants";
 import { PersonalityWeights } from "../../interfaces/question.type";
 
@@ -14,10 +15,13 @@ export default function Test() {
   const [preferences, setPreferences] = useState<number[]>([]);
   const router = useRouter();
   const questionCount = questions.length;
-  function nextQuetion() {
+  const [loading, setLoading] = useState(false);
+
+  const nextQuetion = () => {
     if (questionNumber < questionCount - 1) {
       setQuestionNumber(questionNumber + 1);
     } else {
+      setLoading(true);
       router.push({
         pathname: "/result",
         query: {
@@ -25,12 +29,14 @@ export default function Test() {
             personality.lastIndexOf(Math.max(...personality)) +
               "a".charCodeAt(0)
           ),
-          preferences: Array.from(new Set(preferences)).join(","),
+          preferences: Array.from(new Set(preferences)).sort((a, b) => a - b).join(","),
         },
       });
+      setLoading(false);
     }
   }
-  function chooseFirst() {
+
+  const chooseFirst = useCallback(() => {
     setPersonality(
       (personality) =>
         personality.map(
@@ -43,8 +49,9 @@ export default function Test() {
       return [...preferences, ...preference.map(p => p.id)];
     });
     nextQuetion();
-  }
-  function chooseSecond() {
+  },[nextQuetion])
+
+  const chooseSecond = useCallback(() => {
     setPersonality(
       (personality) =>
         personality.map(
@@ -57,8 +64,9 @@ export default function Test() {
       return [...preferences, ...preference.map(p => p.id)];
     });
     nextQuetion();
-  }
-  function chooseNone() {
+  },[nextQuetion])
+
+  const chooseNone = useCallback(() => {
     setPersonality(
       (personality) =>
         personality.map(
@@ -71,7 +79,8 @@ export default function Test() {
       return [...preferences, ...preference.map(p => p.id)];
     });
     nextQuetion();
-  }
+  },[nextQuetion])
+
   return (
     <>
       <Header />
@@ -120,7 +129,7 @@ export default function Test() {
                 />
               </div>
               <button
-                className="h-24 btn-primary-outline border-2 font-bold py-2 px-4 rounded w-11/12 self-center mb-4 text-base"
+                className="h-24 btn-primary-outline border-2 font-bold py-2 px-2 rounded w-11/12 self-center mb-4 text-base"
                 onClick={chooseFirst}
               >
                 {questions[questionNumber].first.title}
@@ -140,7 +149,7 @@ export default function Test() {
                 />
               </div>
               <button
-                className="h-24 btn-secondary-outline border-2 font-bold py-2 px-4 rounded w-11/12 self-center mb-4 text-base"
+                className="h-24 btn-secondary-outline border-2 font-bold py-2 px-2 rounded w-11/12 self-center mb-4 text-base"
                 onClick={chooseSecond}
               >
                 {questions[questionNumber].second.title}
@@ -155,6 +164,7 @@ export default function Test() {
           </button>
         </div>
       </MobileLayout>
+      {loading && <Loading />}
     </>
   );
 }
