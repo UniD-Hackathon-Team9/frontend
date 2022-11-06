@@ -11,8 +11,8 @@ const ResultPage:NextPage = (props: InferGetServerSidePropsType<typeof getServer
             <Header />
             <MobileLayout>
                 <Result 
-                    personality={props.personality}
-                    preferences={props.preferences}
+                    personality={props?.personality}
+                    preferences={props?.preferences}
                 />
             </MobileLayout>
         </div>

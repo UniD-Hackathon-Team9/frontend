@@ -71,7 +71,7 @@ export const PickPlaceCard = ({day, title, recommends, myPlaces, addPlace, lastD
                     </div>
                 )}
             </div>
-            <div className="max-h-full overflow-scroll h-96">
+            <div className="max-h-full h-96">
                 <RecommendList 
                     selectedRecommendId={selectedPlace ? selectedPlace.id : null}
                     recommends={recommends}

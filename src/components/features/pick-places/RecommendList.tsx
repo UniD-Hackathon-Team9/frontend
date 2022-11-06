@@ -11,12 +11,12 @@ interface RecommendListProps {
 }
 
 export const RecommendList = ({selectedRecommendId, recommends, type, onClickRecommend}:RecommendListProps) => {
-    const list = type === "Food" ? recommends.food : [...recommends.cafe, ...recommends.spots]
+    const list = type === "Food" ? recommends?.food : [...recommends.cafe, ...recommends.spots]
     return (
-        <div className="border-b my-6 overflow-scroll max-h-full flex-col">
-            {list.map((rec) => (
-                <div key={rec.id} className="p-2 border-t flex flex-row flex-1 justify-between items-center">
-                    <div onClick={() => onClickRecommend(rec)}>
+        <div className="border-b my-6 overflow-y-scroll flex-col" style={{maxHeight: "300px"}}>
+            {list?.map((rec) => (
+                <div onClick={() => onClickRecommend(rec)} key={rec.id} className="cursor-pointer p-2 border-t flex flex-row flex-1 justify-between items-center">
+                    <div>
                         <p className="text-md font-semibold">{rec.name}</p>
                         <p className="text-sm text-gray-500">{rec.address}</p>
                     </div>
