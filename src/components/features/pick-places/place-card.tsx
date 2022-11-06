@@ -53,7 +53,7 @@ export const PickPlaceCard = ({day, title, recommends, myPlaces, addPlace, lastD
                 {selectedPlace ? (
                     <>
                         <div className="w-32 h-32 rounded bg-green-50">
-                            <Map places={myPlaces} mapX={selectedPlace.longitude} mapY={selectedPlace.latitude} className="w-full h-full" />
+                            <Map places={myPlaces} mapX={selectedPlace.latitude} mapY={selectedPlace.longtitude} className="w-full h-full" />
                         </div>
                         <div className="flex flex-col justify-center ml-4">
                             <p className="text-lg font-semibold">

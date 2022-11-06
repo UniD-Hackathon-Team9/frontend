@@ -8,7 +8,7 @@ interface SummaryProps {
 const Summary = ({myPlaces}:SummaryProps) => {
     return (
         <div className="w-screen">
-            <NaverMap mapX={33.506} mapY={126.4917} className="w-full aspect-video" places={myPlaces[0]}  />
+            <NaverMap mapX={33.506} mapY={126.4917} className="w-full aspect-video" places={myPlaces.flat()}  />
             {myPlaces.map(
                 (daily, day) => (
                     daily.map((item, index) => (
