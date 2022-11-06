@@ -1,4 +1,4 @@
-# Promise<9> MZEJU
+# Promise<9> MZEJU - Frontend
 MZ세대를 위한 제주도 여행지 추천 서비스
 
 ## Stack
