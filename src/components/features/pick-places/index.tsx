@@ -15,8 +15,8 @@ export interface PickPlacesProps {
 
 const PickPlaces = ({recommends, toSummary, myPlaces, addPlace}:PickPlacesProps) => {
     return (
-        <div className="w-full h-full">
-            <Swiper className="h-full">
+        <div className="max-w-full w-screen h-full">
+            <Swiper className="w-full h-full">
                 {myPlaces.map((places, id) => (
                     <SwiperSlide key={id}>
                         <PickPlaceCard 

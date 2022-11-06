@@ -42,13 +42,13 @@ export const PickPlaceCard = ({day, title, recommends, myPlaces, addPlace, lastD
     }
 
     return (
-        <div className="w-full p-6" style={{
+        <div className="max-w-full p-6" style={{
             maxHeight: "calc(100vh - 56px)"
         }}>
             <p className="text-3xl font-800 mb-4">
                 {title} {STATES[state].name}
             </p>
-            <div style={{aspectRatio: "5/2"}} className="flex flex-row flex-1 w-full">
+            <div className="flex flex-row flex-1 w-full">
                 {selectedPlace ? (
                     <>
                         <div className="w-32 h-32 rounded bg-green-50">
@@ -64,7 +64,7 @@ export const PickPlaceCard = ({day, title, recommends, myPlaces, addPlace, lastD
                         </div>
                     </>
                 ) : (
-                    <div className="flex justify-center items-center w-full h-full">
+                    <div className="flex justify-center items-center w-full h-32">
                         <p className="text-xl">
                             방문하고 싶은 {typeNameOf[STATES[state].type]}을 선택해보세요!
                         </p>
