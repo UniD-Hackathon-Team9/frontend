@@ -1,13 +1,13 @@
 import Header from "../components/layout/Header";
 import MobileLayout from "../components/layout/MobileLayout";
-import Reccomend from "../components/recommend";
+import Recommend from "../components/Recommend";
 
 export default function Aaaa() {
   return (
     <div>
       <Header />
       <MobileLayout>
-        <Reccomend
+        <Recommend
           day={1}
           address="서울시 강동구 울릉도"
           index={3}
