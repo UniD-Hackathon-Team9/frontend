@@ -21,6 +21,20 @@ module.exports = {
           500: "#2fa818",
           600: "#248012",
           700: "#008000",
+        },
+        tagColors: {
+          1: '#ffdddd',
+          2: '#ffeedd',
+          3: '#eeffdd',
+          4: '#ddffdd',
+          5: '#ddffdd',
+          6: '#ddffee',
+          7: '#ddeeff',
+          8: '#ddddff',
+          9: '#ffdddd',
+          // 10: '#ffddee',
+          // 11: '#eeddff',
+          // 12: '#ddddff',
         }
       }
     },

@@ -3,6 +3,7 @@ import { useSwiper } from "swiper/react"
 import { Place } from "../../../interfaces/place.type"
 import { RecommendPlacesDto } from "../../../interfaces/places.recommends.dto"
 import Map from "../../Navermap"
+import { Tag } from "../../Tag"
 import { RecommendList } from "./RecommendList"
 import { PlaceWithState, STATES, typeNameOf } from "./types"
 
@@ -61,6 +62,9 @@ export const PickPlaceCard = ({day, title, recommends, myPlaces, addPlace, lastD
                             <p className="text-sm text-gray-500">
                                 {selectedPlace.address}
                             </p>
+                            <div className="mt-2">
+                                {selectedPlace.tags.map(item => <Tag>{item}</Tag>)}
+                            </div>
                         </div>
                     </>
                 ) : (
