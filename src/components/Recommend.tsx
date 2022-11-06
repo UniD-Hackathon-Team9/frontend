@@ -20,7 +20,7 @@ export default function Recommend({ day, index, name, address, tags }: Props) {
         <div className="font-bold">{name}</div>
         <div className="text-xs">{address}</div>
         <div>
-          {tags.map((item) => (<Tag>{item}</Tag>))}
+          {tags.map((item) => (<Tag key={item}>{item}</Tag>))}
         </div>
       </div>
     </div>

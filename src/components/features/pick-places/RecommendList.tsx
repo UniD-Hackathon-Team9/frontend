@@ -22,7 +22,7 @@ export const RecommendList = ({selectedRecommendId, recommends, type, onClickRec
                         <p className="text-sm text-gray-500">{rec.address}</p>
                         <div className="mt-1">
                             {rec.tags.map((item) => (
-                                <Tag>{item}</Tag>
+                                <Tag key={item}>{item}</Tag>
                             ))}
                         </div>
                     </div>

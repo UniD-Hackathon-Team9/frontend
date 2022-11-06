@@ -8,15 +8,13 @@ interface NaverMapProps {
 	places: PlaceWithState[]
 }
 export default function Map({mapX, mapY, className, places}:NaverMapProps) {
-	console.log("places:", places)
 	const initMap = () => {
 		const map = new window.naver.maps.Map("map", {
 			center: new window.naver.maps.LatLng(mapX, mapY),
 			zoom: 13,
 		});
 		places.map((place, index) => {
-			const coord = new window.naver.maps.Point(place.latitude, place.longtitude)
-			console.log("Coord를 출력해볼까:", coord)
+			const coord = new window.naver.maps.Point(place.latitude, place.longitude)
 			new window.naver.maps.Marker({
 				position: window.naver.maps.TransCoord.fromTM128ToLatLng(coord),
 				map: map,

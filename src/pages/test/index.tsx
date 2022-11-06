@@ -86,17 +86,25 @@ export default function Test() {
       <Header />
       <MobileLayout>
         <div className="relative flex w-full -center content-center flex-col mt-5 p-0">
-          <div className="flex flex-col justify-center h-14 w-10/12 self-center m-0 relative">
+          <div className="flex flex-col justify-center w-10/12 self-center m-0 relative">
             <span className="font-bold text-2xl self-center">
               여행 유형 테스트
             </span>
+            {(questionNumber + 1) === questionCount && (
+              <span className="text-right text-green-600 font-bold">
+                이번이 마지막이에요!
+              </span>
+            )}
             <span className="self-end">
-              {questionNumber + 1} / {questionCount}
+              <span className="font-semibold">
+                {questionNumber + 1}&nbsp;
+              </span>
+                / {questionCount}
             </span>
           </div>
-          <div className="self-center w-10/12 bg-gray-200 rounded-full h-2">
+          <div className="self-center w-10/12 bg-gray-200 rounded-full h-2 mt-2">
             <div
-              className="bg-gray-600 h-2 rounded-full"
+              className="bg-primary-600 h-2 rounded-full"
               style={{
                 width: `${((questionNumber + 1) / questionCount) * 100}%`,
               }}
